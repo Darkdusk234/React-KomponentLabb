@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const SearchField = (setFilmList) => {
+const SearchBar = (setFilmList) => {
     const [titleInput, setTitleInput] = useState("");
     const [yearInput, setYearInput] = useState("");
     const [directorInput, setDirectorInput] = useState("");
@@ -50,4 +50,4 @@ const SearchField = (setFilmList) => {
   )
 }
 
-export default SearchField
+export default SearchBar

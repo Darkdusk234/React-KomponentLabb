@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SearchField from './components/SearchField'
+import SearchBar from './components/SearchBar'
 import './App.css'
 import MovieList from './components/MovieList';
 
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <SearchField setFilmList={SetFilmList}/>
+      <SearchBar setFilmList={SetFilmList}/>
       <MovieList listOfMovies={movieList}/>
     </>
   )
