@@ -6,7 +6,8 @@ const SearchField = (setFilmList) => {
     const [directorInput, setDirectorInput] = useState("");
 
     const Search = async () => {
-        const requestUrl = `http://www.omdbapi.com/?apikey=[27f4ab05]&s=`
+        //Flytta Api nyckeln till en skyddad variabel t.ex. .env
+        const requestUrl = `http://www.omdbapi.com/?apikey=27f4ab05&s=`
 
         if(titleInput !== "" && yearInput === "")
         {
