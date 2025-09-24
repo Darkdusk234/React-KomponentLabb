@@ -5,8 +5,25 @@ const SearchField = (setFilmList) => {
     const [yearInput, setYearInput] = useState("");
     const [directorInput, setDirectorInput] = useState("");
 
-    const Search = () => {
-        
+    const Search = async () => {
+        const requestUrl = `http://www.omdbapi.com/?apikey=[27f4ab05]&s=`
+
+        if(titleInput !== "" && yearInput === "")
+        {
+            requestUrl = requestUrl + `${titleInput}`
+        }
+        else if(titleInput === "" && yearInput !== "")
+        {
+            return;
+        }
+        else if(titleInput === "" && yearInput === "")
+        {
+            return;
+        }
+
+        var response = await fetch({requestUrl});
+        var searchedFilms = await response.json();
+        setFilmList(searchedFilms)
     }
 
   return (
