@@ -25,7 +25,7 @@ const SearchField = (setFilmList) => {
             <input type="Sök med regissör" onChange={(e) => setDirectorInput=(e.target.value)}/>
         </div>
         <div className='SearchButton'>
-            <button onClick={}>Sök</button>
+            <button onClick={Search}>Sök</button>
         </div>
     </div>
     </>
