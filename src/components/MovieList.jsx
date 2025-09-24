@@ -4,9 +4,13 @@ const MovieList = ({listOfMovies}) => {
   return (
     <>
         <div className='FilmList'>
+          <ul>
             {listOfMovies.map((movie, index) => (
-                <FilmCard movie={movie} index={index}/>
+                <li>
+                  <FilmCard movie={movie} index={index}/>
+                </li>
             ))}
+            </ul>
         </div>
     </>
   )
