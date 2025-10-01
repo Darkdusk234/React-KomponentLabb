@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <SearchBar setFilmList={SetFilmList}/>
+      <SearchBar setFilmList={handleFilmListChange}/>
       <MovieList listOfMovies={movieList}/>
     </>
   )

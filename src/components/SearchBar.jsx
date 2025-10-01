@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 
-const SearchBar = (setFilmList) => {
+const SearchBar = ({setFilmList}) => {
     const [titleInput, setTitleInput] = useState("");
     const [yearInput, setYearInput] = useState("");
 
     const Search = async () => {
         //Flytta Api nyckeln till en skyddad variabel t.ex. .env
-        const requestUrl = `http://www.omdbapi.com/?apikey=27f4ab05&s=`
+        let requestUrl = `http://www.omdbapi.com/?apikey=27f4ab05&s=`
 
         if(titleInput !== "" && yearInput === "")
         {
             requestUrl = requestUrl + `${titleInput}`
+            console.log(requestUrl)
         }
         else if(titleInput !== "" && yearInput !== "")
         {
@@ -25,9 +26,18 @@ const SearchBar = (setFilmList) => {
             return;
         }
 
-        var response = await fetch({requestUrl});
-        var searchedFilms = await response.json();
+        const response = await fetch(`${requestUrl}`);
+        console.log(response)
+        const searchedFilms = await response.json();
         setFilmList(searchedFilms)
+    }
+
+    const handleTitleChange = (e) => {
+        setTitleInput(e.target.value)
+    }
+
+    const handleYearChange = (e) => {
+        setYearInput(e.target.value)
     }
 
   return (
@@ -35,11 +45,11 @@ const SearchBar = (setFilmList) => {
     <div className='SearchField'>
         <div className='SearchFieldBox'>
             <h4>Sök med Titel</h4>
-            <input type="Sök med Titel" onChange={(e) => setTitleInput=(e.target.value)}/>
+            <input type="Sök med Titel" onChange={handleTitleChange}/>
         </div>
         <div className='SearchFieldBox'>
             <h4>Sök med släppnings år</h4>
-            <input type="Sök med släppnings år" onChange={(e) => setYearInput=(e.target.value)}/>
+            <input type="Sök med släppnings år" onChange={handleYearChange}/>
         </div>
         <div className='SearchButton'>
             <button onClick={Search}>Sök</button>
