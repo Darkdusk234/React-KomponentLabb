@@ -12,6 +12,10 @@ const SearchBar = (setFilmList) => {
         {
             requestUrl = requestUrl + `${titleInput}`
         }
+        else if(titleInput !== "" && yearInput !== "")
+        {
+            requestUrl = requestUrl + `${titleInput}` + `&y=${yearInput}`
+        }
         else if(titleInput === "" && yearInput !== "")
         {
             return;
