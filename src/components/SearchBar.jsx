@@ -11,7 +11,6 @@ const SearchBar = ({setFilmList}) => {
         if(titleInput !== "" && yearInput === "")
         {
             requestUrl = requestUrl + `${titleInput}`
-            console.log(requestUrl)
         }
         else if(titleInput !== "" && yearInput !== "")
         {
@@ -27,7 +26,6 @@ const SearchBar = ({setFilmList}) => {
         }
 
         const response = await fetch(`${requestUrl}`);
-        console.log(response)
         const searchedFilms = await response.json();
         setFilmList(searchedFilms)
     }
