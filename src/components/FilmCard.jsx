@@ -1,12 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
+import FilmDetails from './FilmDetails'
 
-const MovieCard = (movie, index) => {
+
+const MovieCard = ({movie, index, setDetails}) => {
+
+    const showDetails = async () => {
+        const request = `http://www.omdbapi.com/?apikey=27f4ab05&t=${movie.title}&y=${movie.year}`
+        const detailResponse = await fetch(`${request}`)
+        const detailJson = await detailResponse.json()
+        setDetails({
+            title: detailJson.Title,
+            year: detailJson.Year,
+            poster: detailJson.Poster,
+            runTime: detailJson.Runtime,
+            genre: detailJson.Genre,
+            director: detailJson.Director,
+            actors: detailJson.Actors,
+            plot: detailJson.Plot,
+            rating: detailJson.Rated
+        })
+    }
+
   return (
+    <>
     <div key={index} className='MovieCard'>
-        <img className='moviePoster' src={`${movie.movie.poster}`} alt="Poster for movie" />
-        <p>Title: {movie.movie.title}</p>
-        <p>Release Year: {movie.movie.Year}</p>
+        <button onClick={showDetails}><img className='moviePoster' src={`${movie.poster}`} alt="Poster for movie" /></button>
+        <p>Title: {movie.title}</p>
+        <p>Release Year: {movie.year}</p>
     </div>
+    </>
   )
 }
 
