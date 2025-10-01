@@ -1,12 +1,13 @@
 import React from 'react'
+import FilmCard from './FilmCard'
 
 const MovieList = ({listOfMovies}) => {
   return (
     <>
-        <div className='FilmList'>
-          <ul>
+        <div className='FilmListContainer'>
+          <ul className='FilmList'>
             {listOfMovies.map((movie, index) => (
-                <li>
+                <li key={index}>
                   <FilmCard movie={movie} index={index}/>
                 </li>
             ))}

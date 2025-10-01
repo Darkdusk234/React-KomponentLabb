@@ -26,8 +26,18 @@ const SearchBar = ({setFilmList}) => {
         }
 
         const response = await fetch(`${requestUrl}`);
-        const searchedFilms = await response.json();
-        setFilmList(searchedFilms)
+        const responseJson = await response.json();
+        const searchedFilms = responseJson.Search;
+        let movieList = [];
+        searchedFilms.map((data, index) => {
+            let movie = {
+                title: data.Title,
+                year: data.Year,
+                poster: data.Poster
+            }
+            movieList = [...movieList, movie]
+        })
+        setFilmList(movieList)
     }
 
     const handleTitleChange = (e) => {
