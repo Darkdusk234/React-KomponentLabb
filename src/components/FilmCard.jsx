@@ -3,9 +3,10 @@ import FilmDetails from './FilmDetails'
 
 
 const MovieCard = ({movie, index, setDetails}) => {
+    const apiKey = import.meta.env.VITE_API_KEY;
 
     const showDetails = async () => {
-        const request = `http://www.omdbapi.com/?apikey=27f4ab05&t=${movie.title}&y=${movie.year}`
+        const request = `http://www.omdbapi.com/?apikey=${apiKey}&t=${movie.title}&y=${movie.year}`
         const detailResponse = await fetch(`${request}`)
         const detailJson = await detailResponse.json()
         setDetails({

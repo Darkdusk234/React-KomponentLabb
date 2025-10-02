@@ -3,10 +3,13 @@ import React, { useState } from 'react'
 const SearchBar = ({setFilmList}) => {
     const [titleInput, setTitleInput] = useState("");
     const [yearInput, setYearInput] = useState("");
+    const apiKey = import.meta.env.VITE_API_KEY;
 
     const Search = async () => {
+        console.log(apiKey);
+        
         //Flytta Api nyckeln till en skyddad variabel t.ex. .env
-        let requestUrl = `http://www.omdbapi.com/?apikey=27f4ab05&s=`
+        let requestUrl = `http://www.omdbapi.com/?apikey=${apiKey}&s=`
 
         if(titleInput !== "" && yearInput === "")
         {
