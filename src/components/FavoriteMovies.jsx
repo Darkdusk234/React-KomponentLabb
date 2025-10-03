@@ -1,4 +1,5 @@
 import React from 'react'
+import FilmCard from './FilmCard'
 
 const FavoriteMovies = ({favoriteList, setDetails ,removeMovieFromFavorite}) => {
   return (
