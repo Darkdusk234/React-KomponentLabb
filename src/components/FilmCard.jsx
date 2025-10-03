@@ -22,13 +22,17 @@ const MovieCard = ({movie, index, setDetails, handleFavorite}) => {
         })
     }
 
+    const handleFavoriteMovie = () => {
+        handleFavorite(movie)
+    }
+
   return (
     <>
     <div key={index} className='MovieCard'>
         <button onClick={showDetails}><img className='moviePoster' src={`${movie.poster}`} alt="Poster for movie" /></button>
         <p>Title: {movie.title}</p>
         <p>Release Year: {movie.year}</p>
-        <button>&hearts;</button>
+        <button onClick={handleFavoriteMovie}>&hearts;</button>
     </div>
     </>
   )
