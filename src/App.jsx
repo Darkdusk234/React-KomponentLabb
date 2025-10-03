@@ -24,9 +24,21 @@ function App() {
     SetFavoriteList([...favoriteList, movie])
   }
 
+  const filterFavorites = (existingMovie, movie) => {
+    if(existingMovie.title === movie.title)
+    {
+      if(existingMovie.year === movie.year)
+      {
+        return false;
+      }
+      return true;
+    }
+    return true;
+  }
+
   const removeFromFavorite = (movie) => {
-    favoriteList.filter((existingMovie, index) => 
-      existingMovie.Title !== movie.Title && existingMovie.Year !== movie.Year)
+    const newFavorites = favoriteList.filter((existingMovie, index) => filterFavorites(existingMovie, movie))
+    SetFavoriteList(newFavorites)
   }
 
   return (
