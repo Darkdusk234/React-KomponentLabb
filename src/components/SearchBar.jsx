@@ -6,8 +6,6 @@ const SearchBar = ({setFilmList}) => {
     const apiKey = import.meta.env.VITE_API_KEY;
 
     const Search = async () => {
-        console.log(apiKey);
-        
         //Flytta Api nyckeln till en skyddad variabel t.ex. .env
         let requestUrl = `http://www.omdbapi.com/?apikey=${apiKey}&s=`
 
