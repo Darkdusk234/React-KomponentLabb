@@ -21,6 +21,11 @@ function App() {
   }
 
   const addToFavorites = (movie) => {
+    const existingCheck = favoriteList.find(m => m.name === movie.name && m.year === movie.year)
+    if(existingCheck)
+    {
+      return;
+    }
     SetFavoriteList([...favoriteList, movie])
   }
 
