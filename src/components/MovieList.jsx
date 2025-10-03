@@ -5,6 +5,7 @@ const MovieList = ({listOfMovies, setDetails, addMovieToFavorites}) => {
   return (
     <>
         <div className='FilmListContainer'>
+          <h3>Search Result</h3>
           <ul className='FilmList'>
             {listOfMovies.map((movie, index) => (
                 <li key={index}>
