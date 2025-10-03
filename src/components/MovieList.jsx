@@ -1,7 +1,7 @@
 import React from 'react'
 import FilmCard from './FilmCard'
 
-const MovieList = ({listOfMovies, setDetails}) => {
+const MovieList = ({listOfMovies, setDetails, addToFavorites}) => {
   return (
     <>
         <div className='FilmListContainer'>

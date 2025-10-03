@@ -32,7 +32,7 @@ function App() {
     <>
       <SearchBar setFilmList={handleFilmListChange}/>
       {detailsShown && <FilmDetails movie={movieDetails} />}
-      <MovieList listOfMovies={movieList} setDetails={handleDetailsChange}/>
+      <MovieList listOfMovies={movieList} setDetails={handleDetailsChange} addToFavorites={addToFavorites}/>
     </>
   )
 }
