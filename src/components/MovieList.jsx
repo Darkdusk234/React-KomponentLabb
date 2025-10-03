@@ -8,7 +8,7 @@ const MovieList = ({listOfMovies, setDetails, addToFavorites}) => {
           <ul className='FilmList'>
             {listOfMovies.map((movie, index) => (
                 <li key={index}>
-                  <FilmCard movie={movie} index={index} setDetails={setDetails}/>
+                  <FilmCard movie={movie} index={index} setDetails={setDetails} handleFavorite={addToFavorites}/>
                 </li>
             ))}
             </ul>

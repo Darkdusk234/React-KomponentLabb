@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import FilmDetails from './FilmDetails'
 
 
-const MovieCard = ({movie, index, setDetails}) => {
+const MovieCard = ({movie, index, setDetails, handleFavorite}) => {
     const apiKey = import.meta.env.VITE_API_KEY;
 
     const showDetails = async () => {
@@ -28,6 +28,7 @@ const MovieCard = ({movie, index, setDetails}) => {
         <button onClick={showDetails}><img className='moviePoster' src={`${movie.poster}`} alt="Poster for movie" /></button>
         <p>Title: {movie.title}</p>
         <p>Release Year: {movie.year}</p>
+        <button>&hearts;</button>
     </div>
     </>
   )
