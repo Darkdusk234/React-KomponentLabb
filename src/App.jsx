@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar'
 import './App.css'
 import MovieList from './components/MovieList';
 import FilmDetails from './components/FilmDetails';
+import FavoriteMovies from './components/FavoriteMovies';
 
 function App() {
   const [movieList, SetFilmList] = useState([]);
@@ -33,6 +34,7 @@ function App() {
       <SearchBar setFilmList={handleFilmListChange}/>
       {detailsShown && <FilmDetails movie={movieDetails} />}
       <MovieList listOfMovies={movieList} setDetails={handleDetailsChange} addMovieToFavorites={addToFavorites}/>
+      <FavoriteMovies favoriteList={favoriteList} setDetails={handleDetailsChange} removeMovieFromFavorite={removeFromFavorite} />
     </>
   )
 }
