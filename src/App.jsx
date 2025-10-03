@@ -6,6 +6,7 @@ import FilmDetails from './components/FilmDetails';
 
 function App() {
   const [movieList, SetFilmList] = useState([]);
+  const [favoriteList, SetFavoriteList] = useState([]);
   const [movieDetails, SetDetails] = useState([]);
   const [detailsShown, SetShown] = useState(false)
 
@@ -16,6 +17,10 @@ function App() {
   const handleDetailsChange = (details) => {
     SetDetails(details)
     SetShown(true)
+  }
+
+  const addToFavorites = (movie) => {
+    SetFavoriteList([...favoriteList, movie])
   }
 
   return (
