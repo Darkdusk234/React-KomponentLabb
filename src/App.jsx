@@ -23,6 +23,11 @@ function App() {
     SetFavoriteList([...favoriteList, movie])
   }
 
+  const removeFromFavorite = (movie) => {
+    favoriteList.filter((existingMovie, index) => 
+      existingMovie.Title !== movie.Title && existingMovie.Year !== movie.Year)
+  }
+
   return (
     <>
       <SearchBar setFilmList={handleFilmListChange}/>
