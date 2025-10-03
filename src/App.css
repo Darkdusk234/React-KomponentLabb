@@ -59,6 +59,14 @@
   align-items: center;
 }
 
+.FavoriteList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: Center;
+}
+
 .MovieCard {
   display: flex;
   flex-direction: column;
