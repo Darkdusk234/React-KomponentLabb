@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SearchBar from '../components/SearchBar'
 import MovieList from '../components/MovieList';
 import FilmDetails from '../components/FilmDetails';
@@ -26,6 +26,7 @@ const Home = () => {
       return;
     }
     SetFavoriteList([...favoriteList, movie])
+    localStorage.setItem("favorites", JSON.stringify([...favoriteList, movie]))
   }
 
   const filterFavorites = (existingMovie, movie) => {
@@ -43,7 +44,16 @@ const Home = () => {
   const removeFromFavorite = (movie) => {
     const newFavorites = favoriteList.filter((existingMovie, index) => filterFavorites(existingMovie, movie))
     SetFavoriteList(newFavorites)
+    localStorage.setItem("favorites", JSON.stringify(newFavorites))
   }
+
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites"))
+    if(storedFavorites)
+    {
+        SetFavoriteList(storedFavorites)
+    }
+  }, [])
 
   return (
     <>
