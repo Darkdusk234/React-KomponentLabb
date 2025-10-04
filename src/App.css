@@ -112,3 +112,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.tutorialItem {
+  margin-bottom: 50px;
+}

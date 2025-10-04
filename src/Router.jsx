@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home.jsx'
+import Tutorial from './pages/Tutorial.jsx'
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
 
         <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/tutorial' element={<Tutorial />} />
         </Routes>
     </BrowserRouter>
   )
