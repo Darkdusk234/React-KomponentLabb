@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import SearchBar from './components/SearchBar'
-import './App.css'
-import MovieList from './components/MovieList';
-import FilmDetails from './components/FilmDetails';
-import FavoriteMovies from './components/FavoriteMovies';
+import SearchBar from '../components/SearchBar'
+import MovieList from '../components/MovieList';
+import FilmDetails from '../components/FilmDetails';
+import FavoriteMovies from '../components/FavoriteMovies';
 
 const Home = () => {
   const [movieList, SetFilmList] = useState([]);
